@@ -50,7 +50,9 @@
 
         <div class="sidebar-navigation hidde-sm hidden-xs">
             <div class="logo">
-                <a href="#">Sen<em>tra</em></a>
+                    <img src="{% static 'img/logo.png' %}" alt="">
+                
+                {% comment %} <a href="#">Kagne<em> classes</em></a> {% endcomment %}
             </div>
             <nav>
                 <ul>
@@ -115,10 +117,8 @@
                     <div class="image"></div>
                     <div class="info">
                         <div>
-                          <h1>Beautiful Template<br>Sentra</h1>
-                          <p>This is a HTML CSS template provided by 
-                          			<a href="https://plus.google.com/+templatemo" target="_blank">templatemo</a> website.<br>
-                          			Please tell your friends about our site.</p>
+                          <h1>Kagne Coaching Classes</h1>
+                          
                           <div class="white-button button">
                               <a href="#featured">Discover More</a>
                           </div>
@@ -133,9 +133,7 @@
                         <div class="image"></div>
                         <div class="info">
                         <div>
-                          <h1>Lorem ipsum <br>dolor</h1>
-                          <p>Phasellus luctus odio eget dui imperdiet, at pulvinar ante convallis.
-							<br>Proin sit amet fringilla erat.</p>
+                          <h1>Kagne Coaching Classes</h1>
                           
                           <div class="white-button button">
                               <a href="#featured">Discover More</a>
@@ -151,8 +149,7 @@
                         <div class="image"></div>
                         <div class="info">
                         <div>
-                          <h1>Suspendisse suscipit<br>nulla sed</h1>
-                          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <br>posuere cubilia Curae; Sed at massa turpis.</p>
+                          <h1>Kagne Coaching Classes</h1>
                           
                           <div class="white-button button">
                               <a href="#featured">Discover More</a>
@@ -167,11 +164,41 @@
 
 
         <div class="page-content">
+
+ {% comment %} {% endcomment %}
+            
+ <section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>About<br><em>KCC</em></h1>
+        <p>We are pioneer and one of the determined coaching institute in kandhar. 
+         <br>With an impressive track record molding over 50 NMMS scholarship holders.
+        </p>
+    </div>
+    <div class="section-content">
+                <p style="text-align:left;">
+                Kagne coaching institute was founded in year 2014. We are famous for 1st to 10th standard classes in Marathi, Semi-English and CBSE. 
+                Alongside we also provide coaching for Navodaya, Scholarship and Foundation batches. 
+                </p>
+                <p style="text-align:left;">
+                KCC is iconic name when you’re looking for best coaching in Nanded, you can fulfill your dreams with us. 
+                Over the year we have observed the pattern, level, and type of each competitive exam. 
+                So, we employ our experience, knowledge, and instincts to train the students for entrance exams in the best possible way. 
+                </p>
+                <p style="text-align:left;">
+                Apart from full time coaching, we also offer distance learning mode hence not just the students of kandhar but students from all over Maharashtra can study from KCC. 
+                If you wish to enhance your preparation for SSC board exams while learning from home then join our online learning program and get access to study materials developed by experts.
+                </p>
+    </div>            
+</section> 
+{% comment %}  
+{% endcomment %}
+
+
             <section id="featured" class="content-section">
                 <div class="section-heading">
-                    <h1>Featured<br><em>Places</em></h1>
-                    <p>Praesent pellentesque efficitur magna, 
-                    <br>sed pellentesque neque malesuada vitae.</p>
+                    <h1>Our<br><em>Team</em></h1>
+                    <p>If you desire to be better, faster and smarter, 
+                    <br>we help you drive your vision forward.</p>
                 </div>
                 <div class="section-content">
                     <div class="owl-carousel owl-theme">
@@ -295,45 +322,9 @@
                     </div>
                 </div>
             </section>
-            {% comment %} <section id="projects" class="content-section">
-                <div class="section-heading">
-                    <h1>Recent<br><em>Projects</em></h1>
-                    <p>Praesent pellentesque efficitur magna, 
-                    <br>sed pellentesque neque malesuada vitae.</p>
-                </div>
-                <div class="section-content">
-                    <div class="masonry">
-                        <div class="row">
-                            <div class="item">
-                                <div class="col-md-8">
-                                    <a href="img/portfolio_big_1.jpg" data-lightbox="image"><img src="{% static 'img/portfolio_1.jpg' %}" alt="image 1"></a>
-                                </div>
-                            </div>
-                            <div class="item second-item">
-                                <div class="col-md-4">
-                                    <a href="img/portfolio_big_2.jpg" data-lightbox="image"><img src="{% static 'img/portfolio_2.jpg' %}" alt="image 2"></a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-md-4">
-                                    <a href="img/portfolio_big_3.jpg" data-lightbox="image"><img src="{% static 'img/portfolio_3.jpg' %}" alt="image 3"></a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-md-4">
-                                    <a href="img/portfolio_big_4.jpg" data-lightbox="image"><img src="{% static 'img/portfolio_4.jpg' %}" alt="image 4"></a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-md-8">
-                                    <a href="img/portfolio_big_5.jpg" data-lightbox="image"><img src="{% static 'img/portfolio_5.jpg' %}" alt="image 5"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-            </section> {% endcomment %}
-            <section id="video" class="content-section">
+
+           
+            {% comment %} <section id="video" class="content-section">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-heading">
@@ -358,12 +349,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> {% endcomment %}
+
             <section id="blog" class="content-section">
                 <div class="section-heading">
-                    <h1>Blog<br><em>Entries</em></h1>
-                    <p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum. 
-                    <br>Phasellus luctus odio eget dui imperdiet.</p>
+                    <h1>Our<br><em>Courses</em></h1>
+                    <p>We provide one of the best courses,
+                    <br>Let us know what you like.</p>
                 </div>
                 <div class="section-content">
                     <div class="tabs-content">
@@ -373,43 +365,45 @@
                                     <ul>
                                         <li>
                                             <div class="item">
-                                                <img src="{% static 'img/blog_1.jpg' %}" alt="">
+                                                {% comment %} <img src="{% static 'img/blog_1.jpg' %}" alt=""> {% endcomment %}
                                                 <div class="text-content">
-                                                    <h4>Integer ultrices augue</h4>
-                                                    <span>25 July 2018</span>
+                                                    <h4>Marathi</h4>
+                                                    
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="item">
-                                                <img src="{% static 'img/blog_2.jpg' %}" alt="">
+                                                {% comment %} <img src="{% static 'img/blog_2.jpg' %}" alt=""> {% endcomment %}
                                                 <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>16 July 2018</span>
+                                                    <h4>Semi-English</h4>
+
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="item">
-                                                <img src="{% static 'img/blog_3.jpg' %}" alt="">
+                                                {% comment %} <img src="{% static 'img/blog_2.jpg' %}" alt=""> {% endcomment %}
                                                 <div class="text-content">
-                                                    <h4>Sed at massa turpis</h4>
-                                                    <span>10 July 2018</span>
+                                                    <h4>English</h4>
+
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
                                                     
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                {% comment %} <img src="{% static 'img/blog_3.jpg' %}" alt=""> {% endcomment %}
+                                                <div class="text-content">
+                                                    <h4>CBSE</h4>
+
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
                                                 </div>
                                             </div>
                                         </li>
@@ -426,10 +420,17 @@
                 </div>
                 <div id="contact-content">
                     <div class="section-heading">
-                        <h1>Contact<br><em>Sentra</em></h1>
-                        <p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum. 
-                        <br>Phasellus luctus odio eget dui imperdiet.</p>
+                        <h1>Contact<br><em>us</em></h1>
+                        <p>Still confused ? give us a call.
+                        <br>We are happy to help you.</p>
                         
+                    </div>
+                    <div class="section-heading">
+                        Website.com Solutions Inc.
+
+                        P.O. Box 43083 Cascade
+                        Burnaby, BC V5G 4S2
+                        Canada
                     </div>
                     <div class="section-content">
                         <form id="contact" action="#" method="post">
@@ -441,7 +442,7 @@
                                 </div>
                                 <div class="col-md-4">
                                   <fieldset>
-                                    <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                                    <input name="email" type="email" class="form-control" id="email" placeholder="Your email/cell..." required="">
                                   </fieldset>
                                 </div>
                                  <div class="col-md-4">
