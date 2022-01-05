@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Kagne Coaching Classes</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% comment %} <link rel="apple-touch-icon" href="apple-touch-icon.png"> {% endcomment %}
+
+        <link rel="stylesheet" href="{% static 'classes/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'classes/css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'classes/css/fontAwesome.css' %}">
+        <link rel="stylesheet" href="{% static 'classes/css/light-box.css' %}">
+        <link rel="stylesheet" href="{% static 'classes/css/owl-carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'classes/css/templatemo-style.css' %}">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="{% static 'classes/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    </head>
+
+<body>
+
+{% comment %} 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table> {% endcomment %}
+
+  <main class="content">
+  <div class="container-fluid p-0">
+
+    <h1 class="h3 mb-3">View Result</h1>
+    <div class="col-12">
+  <div class="card">
+    <div class="table-responsive">
+        <table class="table table-striped mb-0 ">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Created By</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">File</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for result in results %}
+                <tr>
+                    <th scope="row">{{result.title}}</th>
+                    <td>{{result.created_by}}</td>
+                    <td>{{result.created_at}}</td>
+                    <td><a href="/media/{{result.file}}" download>download</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+</main>
+</body>
+</html>

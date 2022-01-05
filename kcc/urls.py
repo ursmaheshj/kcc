@@ -23,6 +23,7 @@ from kcc import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name="index"),
+    path('results/',views.results,name="results"),
     
 ]
 if settings.DEBUG:
