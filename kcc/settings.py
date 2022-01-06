@@ -75,23 +75,18 @@ WSGI_APPLICATION = 'kcc.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'd7kqdhblj57uhv',
+    'USER': 'cuvcgcirsorlqx',
+    'PASSWORD': '2aba5a68ed31983655bdecd0e220f49cc08e254f122a375a5a130231745b2cfe',
+    'HOST': 'ec2-52-72-252-211.compute-1.amazonaws.com',
+    'PORT': '5432',
     }
 }
-
-# DATABASES = {
-# 'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'dbmqorfaiv5dtt',
-#     'USER': 'pkeiqrphrdiicx',
-#     'PASSWORD': 'd741ba777612b1b352b8d4c4ed63ec6d4de6f8154c8d00a3c150647118a3a39e',
-#     'HOST': 'ec2-184-73-25-2.compute-1.amazonaws.com',
-#     'PORT': '5432',
-#     }
-# }
 
 
 # Password validation
