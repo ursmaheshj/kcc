@@ -43,6 +43,7 @@
                         {% comment %} <li><a href="#blog">Blog Entries</a></li> {% endcomment %}
                         <li><a href="#blog">Our Courses</a></li>
                         <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="results">Results</a></li>
                     </ul>
                 </nav>
             </div>
@@ -98,6 +99,13 @@
                             Contact Us
                         </a>
                     </li>
+                    <li>
+                        <a href="/results">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Results
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <ul class="social-icons">
@@ -120,7 +128,7 @@
                           <h1>Kagne Coaching Classes</h1>
                           
                           <div class="white-button button">
-                              <a href="#featured">Discover More</a>
+                              <a href="result">Discover More</a>
                           </div>
                         </div>
                         </div>
@@ -136,7 +144,7 @@
                           <h1>Kagne Coaching Classes</h1>
                           
                           <div class="white-button button">
-                              <a href="#featured">Discover More</a>
+                              <a href="#projects">Discover More</a>
                           </div>
                         </div>
                         </div>
@@ -152,7 +160,7 @@
                           <h1>Kagne Coaching Classes</h1>
                           
                           <div class="white-button button">
-                              <a href="#featured">Discover More</a>
+                              <a href="#projects">Discover More</a>
                           </div>
                         </div>
                         </div>
@@ -433,7 +441,19 @@
                         phone : 8888888888
                     </div>
                     <div class="section-content">
-                        <form id="contact" action="#" method="post">
+
+                        {% if messages %}
+                            <div class="alert-message">
+                                <strong>
+                                {% for message in messages  %}
+                                {{message}}
+                                {% endfor %}
+                                </strong> 
+                            </div>
+                    {% endif %}
+
+                        <form id="contact" action="addguest" method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-4">
                                   <fieldset>
