@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'kcc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'dbmqorfaiv5dtt',
+    'USER': 'pkeiqrphrdiicx',
+    'PASSWORD': 'd741ba777612b1b352b8d4c4ed63ec6d4de6f8154c8d00a3c150647118a3a39e',
+    'HOST': 'ec2-184-73-25-2.compute-1.amazonaws.com',
+    'PORT': '5432',
     }
 }
 
