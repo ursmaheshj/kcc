@@ -39,11 +39,11 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#top">Home</a></li>
                         <li><a href="#projects">About KCC</a></li>
+                        <li><a href="#result">View Result</a></li>
                         <li><a href="#featured">Our Team</a></li>
                         {% comment %} <li><a href="#blog">Blog Entries</a></li> {% endcomment %}
                         <li><a href="#blog">Our Courses</a></li>
                         <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="results">Results</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,7 +51,7 @@
 
         <div class="sidebar-navigation hidde-sm hidden-xs">
             <div class="logo">
-                    <img src="{% static 'classes/img/logo.png' %}" alt="">
+                    <img src="{% static 'classes/img/logo.jpg' %}" alt="">
                 
                 {% comment %} <a href="#">Kagne<em> classes</em></a> {% endcomment %}
             </div>
@@ -69,6 +69,13 @@
                             <span class="rect"></span>
                             <span class="circle"></span>
                             About KCC
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#result">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            View Results
                         </a>
                     </li>
                     <li>
@@ -97,13 +104,6 @@
                             <span class="rect"></span>
                             <span class="circle"></span>
                             Contact Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/results">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Results
                         </a>
                     </li>
                 </ul>
@@ -172,7 +172,7 @@
 
 
         <div class="page-content">
-
+            
  {% comment %} {% endcomment %}
             
  <section id="projects" class="content-section">
@@ -196,10 +196,56 @@
                 Apart from full time coaching, we also offer distance learning mode hence not just the students of kandhar but students from all over Maharashtra can study from KCC. 
                 If you wish to enhance your preparation for SSC board exams while learning from home then join our online learning program and get access to study materials developed by experts.
                 </p>
+                
+
     </div>            
 </section> 
-{% comment %}  
-{% endcomment %}
+
+<section id="result" class="content-section">
+    <div id="contact-content">
+        <div class="section-heading">
+            <h1>View<br><em>Results</em></h1>
+            <p>Check your results here...
+            <br>Best of Luck !</p>
+            
+        </div>
+        <div class="section-content">
+
+            <form id="results" action="results" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <fieldset>
+                            <select id="medium" class="form-control" name="medium" required>
+                                <option value="" selected hidden>--Medium--</option>
+                                {% for course in courses %}
+                                <option value={{course.title}}>{{course.title}}</option>
+                                {% endfor %}
+                            </select>
+                        </fieldset>
+                      </div>
+                      <br>
+                      <div class="col-md-4">
+                        <fieldset>
+                            <select id="std" class="form-control" name="std" required>
+                                <option value="" selected hidden>--Class--</option>
+                                {% for k,v in stds %}
+                                <option value={{k}}>{{v}}</option>
+                                {% endfor %}
+                            </select>
+                        </fieldset>
+                      </div>
+                      <br>
+                    <div class="col-md-4">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="btn">View Result</button>
+                      </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 
             <section id="featured" class="content-section">
@@ -371,50 +417,18 @@
                             <section id="first-tab-group" class="tabgroup">
                                 <div id="tab1">
                                     <ul>
+                                        {% for course in courses %}
                                         <li>
                                             <div class="item">
-                                                {% comment %} <img src="{% static 'img/blog_1.jpg' %}" alt=""> {% endcomment %}
                                                 <div class="text-content">
-                                                    <h4>Marathi</h4>
+                                                    <h4>{{course.title}}</h4>
                                                     
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    <p>{{course.details}}</p>
                                                     
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="item">
-                                                {% comment %} <img src="{% static 'img/blog_2.jpg' %}" alt=""> {% endcomment %}
-                                                <div class="text-content">
-                                                    <h4>Semi-English</h4>
-
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                {% comment %} <img src="{% static 'img/blog_2.jpg' %}" alt=""> {% endcomment %}
-                                                <div class="text-content">
-                                                    <h4>English</h4>
-
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                {% comment %} <img src="{% static 'img/blog_3.jpg' %}" alt=""> {% endcomment %}
-                                                <div class="text-content">
-                                                    <h4>CBSE</h4>
-
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </section> 
@@ -433,16 +447,7 @@
                         <br>We are happy to help you.</p>
                         
                     </div>
-                    <div class="section-heading">
-                        kagne coaching classes, <br>
-                        Muktainagar, <br>
-                        Kandhar, <br>
-                        Maharashtra 431714. <br>
-                        phone : 8888888888
-                    </div>
-                    <div class="section-content">
-
-                        {% if messages %}
+                    {% if messages %}
                             <div class="alert-message">
                                 <strong>
                                 {% for message in messages  %}
@@ -451,6 +456,14 @@
                                 </strong> 
                             </div>
                     {% endif %}
+                    <div class="section-heading">
+                        kagne coaching classes, <br>
+                        Muktainagar, <br>
+                        Kandhar, <br>
+                        Maharashtra 431714. <br>
+                        phone : 8888888888
+                    </div>
+                    <div class="section-content">
 
                         <form id="contact" action="addguest" method="post">
                             {% csrf_token %}

@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
+from django.dispatch import receiver
+from django.db.models.signals import post_delete
 
 # Create your models here.
 class Course(models.Model):
@@ -35,3 +37,11 @@ class Guest(models.Model):
     def __str__(self):
         return self.name
 
+
+@receiver(post_delete, sender=Result)
+def post_del_result(sender, instance, *args, **kwargs):
+    try:
+        instance.file.delete()
+    except:
+        pass
+    

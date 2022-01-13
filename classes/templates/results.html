@@ -19,9 +19,53 @@
 
   <main class="content">
   <div class="container-fluid p-0">
-
+    {% if messages %}
+        <div class="alert-message">
+            <strong>
+            {% for message in messages  %}
+            {{message}}
+            {% endfor %}
+            </strong> 
+        </div>
+    {% endif %}
     <h1 class="h3 mb-3">View Result :</h1>
-    <h5 class="mb-3">Home</h5>
+    <h5 class="mb-3"><a href="/">Home</a></h5>
+    <div class="section-content">
+
+        <form id="results" action="results" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4">
+                    <fieldset>
+                        <select id="medium" class="form-control" name="medium" required>
+                            <option value="" selected hidden>--Medium--</option>
+                            {% for course in courses %}
+                            <option value={{course.title}}>{{course.title}}</option>
+                            {% endfor %}
+                        </select>
+                    </fieldset>
+                  </div>
+                  
+                  <div class="col-md-4">
+                    <fieldset>
+                        <select id="std" class="form-control" name="std" required>
+                            <option value="" selected hidden>--Class--</option>
+                            {% for k,v in stds %}
+                            <option value={{k}}>{{v}}</option>
+                            {% endfor %}
+                        </select>
+                    </fieldset>
+                  </div>
+                  
+                <div class="col-md-4">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="btn">View Result</button>
+                  </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div class="col-12">
         <div class="card">
           <div class="table-responsive">
