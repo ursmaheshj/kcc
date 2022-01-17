@@ -1,0 +1,1 @@
+web: gunicorn kcc.wsgi

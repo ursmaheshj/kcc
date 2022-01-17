@@ -1,16 +1,18 @@
 from django.contrib import messages
 from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseRedirect
-from classes.models import Course, Guest, Result
+from classes.models import Course, Guest, Notification, Result
 
 
 # Create your views here.
 def index(request):
     courses = Course.objects.all()
     stds = Result.std_choices
+    notifications = Notification.objects.all()
     context = {
         "courses" : courses,
-        "stds" : stds
+        "stds" : stds,
+        "notifications" : notifications
     }
     return render(request,'index.html',context)
 
