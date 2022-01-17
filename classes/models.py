@@ -15,7 +15,7 @@ class Result(models.Model):
     id = models.AutoField(primary_key=True)
     std_choices = ((1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10))
     title = models.CharField(max_length=50)
-    file = models.FileField(upload_to='classes/results/')
+    link = models.CharField(max_length=500)
     std = models.IntegerField(choices=std_choices)
     medium = models.ForeignKey(Course,on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -37,11 +37,3 @@ class Guest(models.Model):
     def __str__(self):
         return self.name
 
-
-@receiver(post_delete, sender=Result)
-def post_del_result(sender, instance, *args, **kwargs):
-    try:
-        instance.file.delete()
-    except:
-        pass
-    
