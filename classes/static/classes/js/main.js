@@ -53,17 +53,17 @@ jQuery(document).ready(function($) {
             responsiveClass:true,
             responsive:{
                 0:{
-                    items:1,
+                    items:2,
                     nav:true
                 },
                 600:{
-                    items:2,
-                    nav:false
+                    items:3,
+                    nav:true
                 },
                 1000:{
-                    items:3,
+                    items:4,
                     nav:true,
-                    loop:false
+                    loop:true
                 }
             }
         })
