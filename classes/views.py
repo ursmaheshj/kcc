@@ -6,13 +6,19 @@ from classes.models import Course, Guest, Notification, Result
 
 # Create your views here.
 def index(request):
-    courses = Course.objects.all()
-    stds = Result.std_choices
+
     notifications = Notification.objects.all()
+    courses = Course.objects.all()
+    mediums = Result.med_choices
+    subjects = Result.sub_choices
+    stds = Result.std_choices
+   
     context = {
+        "notifications" : notifications,
         "courses" : courses,
-        "stds" : stds,
-        "notifications" : notifications
+        "mediums" : mediums,
+        "subjects" : subjects,
+        "stds" : stds
     }
     return render(request,'index.html',context)
 
@@ -20,21 +26,24 @@ def results(request):
     if request.method != "POST":
         return HttpResponse("Method not Allowed..!")
     else :
-        #try :
-            medium = Course.objects.get(title=request.POST.get('medium'))
+        try :
+            medium = request.POST.get('medium')
+            sub = request.POST.get('subject')
             std = request.POST.get('std')
 
-            results = Result.objects.filter(std=std,medium=medium.id)
+            results = Result.objects.filter(medium=medium,sub=sub,std=std)
             
-            courses = Course.objects.all()
+            mediums = Result.med_choices
+            subjects = Result.sub_choices
             stds = Result.std_choices
             context = {
-                "courses" : courses,
+                "mediums" : mediums,
+                "subjects" : subjects,
                 "stds" : stds,
                 "results" : results
             }
             return render(request,'results.html',context)
-        #except :
+        except :
             messages.error(request,"Something went wrong please try again")
             return HttpResponseRedirect("results")
 
