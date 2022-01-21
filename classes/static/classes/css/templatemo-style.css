@@ -313,6 +313,7 @@ header {
 .slider p a {
 	color: #FFF;
 }
+
 .slider p a:hover {
 	color: #FF0;
 	text-decoration: none;
