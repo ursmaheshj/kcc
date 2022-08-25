@@ -1,4 +1,4 @@
-Django==3.2.12
+Django==3.2.15
 psycopg2==2.9.2
 pywin32-ctypes==0.2.0
 sqlparse==0.4.1
